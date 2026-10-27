@@ -1,0 +1,24 @@
+# Konfigurasi & rahasia
+.env
+
+# Dependensi (install ulang dengan: composer install)
+/vendor/
+
+# File sementara CodeIgniter
+/writable/cache/*
+/writable/debugbar/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+!/writable/**/index.html
+!/writable/**/.htaccess
+
+# Data pelanggan (jangan diunggah)
+/public/bukti/
+/public/uploud/
+
+# File sistem / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

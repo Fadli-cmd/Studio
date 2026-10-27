@@ -1,0 +1,96 @@
+<?= $this->extend('main/layout') ?>
+
+<?= $this->section('judul') ?>
+<b>FORM EDIT PELANGGAN
+</b>
+<?= $this->endSection('judul') ?>
+
+<?= $this->section('subjudul') ?>
+
+<?= form_button('', '<i class="fas fa-fast-backward"></i> <b>KEMBALI</b>', [
+  'class' => 'btn btn-warning',
+  'onclick' => "location.href=('" . site_url('pelanggan/index') . "')"
+]) ?>
+
+<?= $this->endSection('subjudul') ?>
+
+<?= $this->section('isi') ?>
+
+<?= form_open_multipart('pelanggan/updatedata') ?>
+<?= session()->getFlashdata('error'); ?>
+<?= session()->getFlashdata('sukses'); ?>
+<?= session()->getFlashdata('erorupdate'); ?>
+
+<div class="card-body">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">ID PELANGGAN</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="kd" name="kd" placeholder="ID PELANGGAN" readonly value="<?= $kd ?>">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">USERNAME</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="username" name="username" placeholder="USERNAME" value="<?= $username ?>">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">EMAIL</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="email" name="email" placeholder="EMAIL" value="<?= $email ?>">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">ALAMAT</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="alamat" name="alamat" placeholder="ALAMAT " value="<?= $alamat ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">NO HP</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="nohp" name="nohp" placeholder="NO HP " value="<?= $nohp ?>">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-6">
+      <input type="submit" value="Simpan" class="btn btn-success">
+    </div>
+  </div>
+
+
+
+
+  <?= form_close() ?>
+
+
+  <?=
+  form_submit(
+    '',
+    'UPDATE',
+    [
+      'class' => 'btn btn-success',
+      'onclick' => "location.href=('" . site_url('pelanggan/index') . "')"
+    ]
+  )
+  ?>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#master').addClass('nav-item menu-is-opening menu-open');
+    $('#master2').addClass('nnav-link active');
+    $('#satuan').addClass('nav-link active')
+  });
+</script>
+
+
+<?= $this->endSection('isi') ?>
